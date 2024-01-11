@@ -19,7 +19,7 @@
   
   body {
     
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     min-height: 100vh;
     border-radius: 10px;
   }
@@ -50,19 +50,19 @@
     min-width: 400px;
     padding: 10px 10px;
     background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+
   }
   
   #search-form button {
     margin-left: 10px;
     padding: 10px;
     color: black;
-
-  }
-  #searchfont {
-    color:rgb(255, 246, 226);
+    border-radius: 10px;
 
 
   }
+  
   #card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
