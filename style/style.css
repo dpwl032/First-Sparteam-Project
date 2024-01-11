@@ -1,6 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+
 :root {
-    --bg-header-color: #ffe194;
-    --bg-card-color: bisque;
+    --bg-header-color: rgb(247, 247, 247);
+    --bg-card-color: rgb(247, 247, 247);
   }
   
   * {
@@ -10,8 +18,10 @@
   }
   
   body {
-    background-color: aquamarine;
+    
+    background-color: rgb(0, 0, 0);
     min-height: 100vh;
+    border-radius: 10px;
   }
   
   header {
@@ -26,23 +36,33 @@
     text-align: center;
     padding: 20px 0;
     border-bottom: 1px solid black;
+    
+
   }
   
   #search-form label {
     font-size: 25px;
+    
   }
   
   #search-form input {
     margin-left: 20px;
-    min-width: 200px;
-    padding: 5px 10px;
+    min-width: 400px;
+    padding: 10px 10px;
+    background-color: rgb(247, 247, 247);
   }
   
   #search-form button {
     margin-left: 10px;
-    padding: 5px;
+    padding: 10px;
+    color: black;
+
   }
-  
+  #searchfont {
+    color:rgb(255, 246, 226);
+
+
+  }
   #card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
