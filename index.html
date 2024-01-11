@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/modal.css">
     <title>12조 영화 DB</title>
     <script src="src/main.js" type="module"></script>
   </head>
@@ -20,8 +21,26 @@
         id="search-input"
         placeholder="영화 제목을 검색해 보세요"
       />
+      
       <button type="submit" id="search-btn">검색</button>
     </form>
+
+    <div id="modal" class="modal-overlay">
+      <div class="modal-window">
+          <div class="close-area">✕</div>
+          <div class="title">
+              <h2>제목</h2>
+              <div class="modal-img"></div>
+          </div>
+          
+          
+          <div class="content">
+              <p>내용: 성공한 은행 부지점장 앤디는 그의 아내와 그 애인을 살해했다는 누명을 쓰고 쇼생크 교도소로 보내진다. 악질의 재소자들 사이에서 힘들어하던 앤디는 실세 레드와 친해지고, 교도소장 노먼의 돈을 관리하기 시작한다.</p>
+          </div>
+          <div class="see-more"><a href="none">더보기</a></div>
+      </div>
+  </div>
+
     <ul id="card-list"></ul>
 
   </body>
