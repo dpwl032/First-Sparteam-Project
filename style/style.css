@@ -7,7 +7,8 @@
 
 
 :root {
-    --bg-header-color: rgb(247, 247, 247);
+    
+    --bg-header-color: rgb(0, 0, 0);
     --bg-card-color: rgb(247, 247, 247);
   }
   
@@ -16,6 +17,7 @@
     margin: 0;
     padding: 0;
   }
+
   
   body {
     
@@ -32,6 +34,10 @@
     align-items: center;
   }
   
+  #headfont {
+    color:rgb(247, 247, 247);
+  }
+
   #search-form {
     text-align: center;
     padding: 20px 0;
