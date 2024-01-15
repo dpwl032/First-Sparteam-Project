@@ -61,7 +61,9 @@ commentForm.addEventListener("submit", (e) => {
     pw.value = '';
     pwCheck.value = '';
     pw.focus();
-  };
+  }else{
+    return;
+  }
 
 
   // 로컬스토리지에 저장된 영화 아이디값을 기준으로 댓글 불러오기
