@@ -41,7 +41,7 @@ clickedMoviev.appendChild(movieVoteAverage);
 const commentForm = document.querySelector('.commentForm');
 
 // 댓글 목록 ul
-const commentBox = document.querySelector('.commentBox'); 
+const commentBox = document.querySelector('.commentBox');
 
 // 폼 submit 이벤트
 commentForm.addEventListener("submit", (e) => {
@@ -69,7 +69,7 @@ commentForm.addEventListener("submit", (e) => {
   //   return;
   // }
 
-// 로컬스토리지에 저장된 영화 아이디값을 기준으로 댓글 불러오기
+  // 로컬스토리지에 저장된 영화 아이디값을 기준으로 댓글 불러오기
   let getComment = window.localStorage.getItem(clickedMovieId);
 
   // 문자열로 변환된 댓글을 다시 객체로 변환 
@@ -77,18 +77,20 @@ commentForm.addEventListener("submit", (e) => {
   let returnObjcomment = JSON.parse(getComment);
 
   // 댓글이 없다면 빈 배열로 반환
-  if(!returnObjcomment){
-    returnObjcomment=[];
+  if (!returnObjcomment) {
+    returnObjcomment = [];
   }
-console.log("returnObjcomment",returnObjcomment);
-console.log("getComment",getComment);
+  console.log("returnObjcomment", returnObjcomment);
+  console.log("getComment", getComment);
 
 
   // 댓글 객체 생성(작성자, 댓글 내용, 비밀번호) 
+  const id = Date.now();
   const makeComment = {
     userName: userName.value,
     comment: comment.value,
-    pw: pw.value
+    pw: pw.value,
+    id
   };
 
   // 댓글을 생성하면 댓글목록 배열에 추가
@@ -100,7 +102,7 @@ console.log("getComment",getComment);
 
   // 댓글 객체를 문자열로 변환 후 로컬스토리지에 저장
   const setComment = localStorage.setItem(clickedMovieId, objComment);
-console.log(clickedMovieId);
+  console.log(clickedMovieId);
 
   // html 요소 만들기
   const comments = document.createElement('li');
@@ -131,9 +133,8 @@ loadComments();
 // 댓글 불러오기
 function loadComments() {
   // 모든 댓글을 가져오기
-const allComments = JSON.parse(localStorage.getItem(clickedMovieId));
-console.log("allComments", allComments);
-
+  const allComments = JSON.parse(localStorage.getItem(clickedMovieId));
+  console.log("allComments", allComments);
 
   // 가져온 댓글을 화면에 표시
   commentBox.innerHTML = ''; // 기존의 댓글 목록 초기화
@@ -142,6 +143,7 @@ console.log("allComments", allComments);
     const commentElement = document.createElement('li');
     commentElement.innerText = `${comment.comment} - ${comment.userName}`;
     commentElement.dataset.userName = comment.userName;
+    commentElement.dataset.id = comment.id;
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'deleteBtn';
     deleteBtn.innerText = '삭제';
@@ -152,53 +154,42 @@ console.log("allComments", allComments);
 }
 
 
-
-
-
-
-// 댓글 삭제
-function deleteComment(userName) {
-
-  // 로컬 스토리지에서 유저네임의 댓글 삭제
-  localStorage.removeItem(userName);
-}
-
-// // 댓글 삭제
-// commentBox.addEventListener("click", (e) => {
-
-//   if (e.target.classList.contains('deleteBtn')) {
-
-//     const commentElement = e.target.parentElement;
-//     const userName = commentElement.dataset.userName; // 댓글의 유저네임을 가져옴
-//     deleteComment(userName); // 댓글 삭제 함수 호출
-//     commentElement.remove(); // 화면에서도 삭제된 댓글 제거
-//   }
-// });
-
-
-
-// 삭제기능 구현안됨, 수정할것
 // 비밀번호 확인 삭제
-commentBox.addEventListener("click", (e) => { 
+commentBox.addEventListener("click", (e) => {
 
   if (e.target.classList.contains('deleteBtn')) {
 
-    // 현재 댓글 
+    // 삭제하려는 댓글 
     const commentElement = e.target.parentElement;
-    
-    // 댓글에서 비밀번호 가져오기
-    const commentInfo = JSON.parse(localStorage.getItem(commentElement.dataset.username));
-    const storedPassword = commentInfo.pw;
+    const id = commentElement.dataset.id;
+    // console.log("id", commentElement.dataset.id)
+
+    // 댓글 가져오기
+    const comments = JSON.parse(localStorage.getItem(clickedMovieId));
+
+    const comment = comments.find(function (comment) {
+      return String(comment.id) === id
+    });
+    // console.log("comment", comment);
 
     // 비밀번호 입력 받기
     const userPassword = prompt("댓글을 삭제하려면 비밀번호를 입력하세요:");
 
-    // 입력된 비밀번호와 저장된 비밀번호 비교
-    if (userPassword === storedPassword) {
+    // // 입력된 비밀번호와 저장된 비밀번호 비교
+    if (userPassword === comment.pw) {
+
       // 비밀번호가 일치하는 경우 댓글 삭제
-      const username = commentElement.dataset.username;
-      localStorage.removeItem(username);
-      commentElement.remove();
+      alert('테스트');
+
+      commentElement.remove();  // html에서 요소 삭제
+      
+      let filteredComments = comments.filter(function (comment) {
+        return String(comment.id) !== id
+      });
+      // console.log("filteredComments",filteredComments)
+
+      localStorage.setItem(clickedMovieId, JSON.stringify(filteredComments));
+
       alert("댓글이 삭제되었습니다.");
     } else {
       // 비밀번호가 일치하지 않는 경우
