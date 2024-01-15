@@ -42,7 +42,7 @@
 }
 
 #modal .title h2 {
-    background-color: aqua;
+    /* background-color: aqua; */
     text-align: center;
     width: 300px;
     margin: 15px 30px 15px;
@@ -74,7 +74,7 @@
 }
 
 #modal .content {
-    background-color: green;
+    /* background-color: green; */
     height: 370px;
     width: 400px;
     margin: -380px 350px;

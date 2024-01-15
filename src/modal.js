@@ -5,27 +5,7 @@
 //     modal.style.display = "flex"
 // })
 
-//모달창의 클로즈(x) 버튼을 누르면 모달창이 꺼지게 하기
-const closeBtn = modal.querySelector(".close-area")
-closeBtn.addEventListener("click", e => {
-    modal.style.display = "none"
-})
 
-
-//모달창 바깥 영역을 클릭하면 모달창이 꺼지게 하기
-modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if (evTarget.classList.contains("modal-overlay")) {
-        modal.style.display = "none"
-    }
-})
-
-//모달창이 켜진 상태에서 ESC 버튼을 누르면 모달창이 꺼지게 하기
-window.addEventListener("keyup", e => {
-    if (modal.style.display === "flex" && e.key === "Escape") {
-        modal.style.display = "none"
-    }
-})
 
 const options = {
     method: 'GET',
@@ -56,32 +36,71 @@ function addMovie(movie) {
     // 인자로 받은 객체 데이터를 구조분해 할당으로 원하는 값만 추출
     const { title, overview, poster_path, vote_average, id } = movie;
     // console.log(movie);
+    const poster =document.getElementById('modalImg');
+    const img = document.createElement('img');
+    poster.appendChild(img);
+    poster.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+    const modalTitle = document.getElementById("modalTitle");
+    modalTitle.innerText = title;
+
+    const contentName = document.getElementById("contentName");
+    contentName.innerText = overview;
+
 
     const movieTitle = title;
     const moviePoster = poster_path;
     const movieOverview = overview;
-    console.log(movie);
-    poster.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
+    // console.log(movie);
+    // console.log(moviePoster);
 
-    title.innerText = title;
-    overview.innerText = overview;
+    // title.innerText = title;
+    // overview.innerText = overview;
 
-    const modalImg = document.getElementById("modalImg");
-    const modalTitle = document.getElementById("modalTitle");
-    const contentName = document.getElementById("contentName");
+    // const modalImg = document.getElementById("modalImg");
+    // const modalTitle = document.getElementById("modalTitle");
+    // const contentName = document.getElementById("contentName");
 
-    //moviesBox 누르면 모달창 켜지게 하기
-    const modal = document.getElementById("modal")
-    const btnModal = document.getElementById("moviesBox")
-    btnModal.addEventListener("click", e => {
-        modal.style.display = "flex"
+    
+};
 
-        const modalimg = document.getElementById("modalImg");
-        const modaltitle = document.getElementById("modalTitle");
-        const modalcontentName = document.getElementById("contentName");
-        modalimg.innerHTML = poster;
-        modaltitle.innerText = title;
-        modalcontentName.innerText = overview;
-        
-    });
-}
+//moviesBox 누르면 모달창 켜지게 하기
+const modal = document.getElementById("modal")
+const btnModal = document.getElementById("moviesBox")
+
+btnModal.addEventListener("click", e => {
+    modal.style.display = "flex"
+    
+    const modalimg = document.getElementById("modalImg");
+    // console.log("모달 이미지",modalimg);
+
+    const modaltitle = document.getElementById("modalTitle");
+    const modalcontentName = document.getElementById("contentName");
+    modalimg.src= `https://image.tmdb.org/t/p/w500${moviePoster}`;
+    console.log("모달 이미지",modalimg);
+    modaltitle.innerText = title;
+    modalcontentName.innerText = overview;
+    
+});
+
+//모달창의 클로즈(x) 버튼을 누르면 모달창이 꺼지게 하기
+const closeBtn = document.querySelector(".close-area")
+closeBtn.addEventListener("click", (e) => {
+    modal.style.display = "none"
+})
+
+
+//모달창 바깥 영역을 클릭하면 모달창이 꺼지게 하기
+modal.addEventListener("click", e => {
+    const evTarget = e.target
+    if (evTarget.classList.contains("modal-overlay")) {
+        modal.style.display = "none"
+    }
+})
+
+//모달창이 켜진 상태에서 ESC 버튼을 누르면 모달창이 꺼지게 하기
+window.addEventListener("keyup", e => {
+    if (modal.style.display === "flex" && e.key === "Escape") {
+        modal.style.display = "none"
+    }
+})
