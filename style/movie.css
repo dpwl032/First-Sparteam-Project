@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+
+
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,12 +21,24 @@ header {
   height: 140px;
   margin: 2%;
   color: white;
+  display: flex;
 }
 
 header img:hover {
   cursor: pointer;
   transform: scale(1.05);
+  
 }
+
+
+.headerImg {
+
+  
+  margin: 0 auto;
+  
+
+}
+
 
 #searchForm {
   width: 100%;
@@ -65,7 +86,6 @@ header img:hover {
 
 #moviesBox {
   width: 100%;
-  margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -73,17 +93,18 @@ header img:hover {
 }
 
 .card {
-  width: 20%;
-  height: 80vh;
+  width: 25%;
+  height: 720px;
   padding: 1%;
   margin: 3%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  
   align-items: center;
 
-  color: white;
-  background-color: #171717;
+  color: black;
+  background-color: white;
+
   border-radius: 10px;
 }
 
@@ -96,4 +117,30 @@ header img:hover {
   filter: invert(10%);
   /* filter: brightness(150%); */
   transform: scale(1.1);
+}
+
+
+.poster{
+
+  margin: 20px auto;
+
+
+}
+.mvTitle {
+  margin: 10px auto;
+  font-size: medium;
+
+}
+
+.mvOverview {
+
+  margin: 10px auto;
+  width: 90%;
+
+
+}
+
+.vote-mvVote_average{
+  margin: 10px auto;
+  font-weight: bolder;
 }

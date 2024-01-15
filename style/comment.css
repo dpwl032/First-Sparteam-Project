@@ -24,7 +24,7 @@ header {
 }
 
 .clickedMoviev {
-  background-color: beige;
+  background-color: white;
   width: 60%;
   margin: 20px auto 0 auto;
   display: flex;
@@ -113,7 +113,7 @@ header {
 .reply {
   color: black;
   width: 60%;
-  background-color: beige;
+  background-color: white;
   flex: auto;
   
 }
@@ -121,8 +121,17 @@ header {
 .reply1 {
   color: black;
   width: 20%;
-  background-color: beige;
+  background-color: white;
   margin: 15px auto;
   white-space : nowrap;
 }
 
+.commentbtn {
+
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+
+
+
+}
