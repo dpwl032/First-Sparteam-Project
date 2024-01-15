@@ -1,4 +1,10 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
 header {
 
   display: flex;
@@ -20,11 +26,15 @@ header {
 .clickedMoviev {
   background-color: beige;
   width: 60%;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  color: black;
+  border-radius: 8px;
+
+
 }
 
 .commentContainer {
@@ -38,30 +48,81 @@ header {
 }
 
 .commentForm {
-  width: 61%;
-  margin: 0 auto;
+  width: 88%;
+  margin: 5px auto;
 
 
+}
+
+.commentBox{
+
+  margin: 30px auto;
+  width: 88%;
+
+}
+
+.deletBtn {
+
+  margin: 20px 15px;
+
+}
+
+
+.reply {
+  
+  margin: 20px auto;
+  border-radius: 8px;
+
+}
+
+
+#searchForm>input {
+  
+  width: 40%;
+  font-size: 15px;
+
+}
+
+.movieposter {
+
+  margin: 5% auto;
+
+}
+
+.movieTitle {
+  font-size: larger;
+  margin: 10px auto;
+  font-weight:900
+
+}
+
+.movieOverview {
+  margin: 10px auto;
+  flex: auto;
+  width: 80%;
+
+
+}
+
+.movieVoteAverage {
+
+  margin: 30px auto 50px auto;
+  font-weight:900
 }
 
 .reply {
-  margin: 0 auto;
+  color: black;
+  width: 60%;
+  background-color: beige;
+  flex: auto;
+  
 }
 
-#searchForm {
-  width: 100%;
-
-}
-
-#searchForm > input {
-  box-sizing: border-box;
-  padding: 10px;
-  width: 40%;
-  margin: 0 20%;
-  border: none;
-  color: white;
-  font-size: 20px;
-  background-color: transparent;
-  border-bottom: 1px solid white;
+.reply1 {
+  color: black;
+  width: 20%;
+  background-color: beige;
+  margin: 15px auto;
+  white-space : nowrap;
 }
 

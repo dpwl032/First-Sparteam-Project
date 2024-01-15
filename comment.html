@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>comment</title>
   <script src="src/comment.js" type="module"></script>
-  <!-- <script src="src/movie.js" type="module"></script> -->
+  <script src="src/movie.js" type="module"></script>
   <link rel="stylesheet" href="style/comment.css">
   <link rel="stylesheet" href="style/movie.css">
 </head>
@@ -14,7 +14,7 @@
 <body>
 
   <header>
-    <img class = "headerImg" src="img/title.png" alt="Spasta Movie" onclick="location.reload();">
+    <img class="headerImg" src="img/title.png" alt="Spasta Movie" onclick="location.reload();">
   </header>
   <form id="searchForm">
     <label for="search">영화 검색</label>
@@ -26,28 +26,19 @@
 
     <div class="clickedMoviev">
 
-      <h3>
-        상세설명
-      </h3>
-
-      <img class="movieposter" src="https://image.tmdb.org/t/p/w500null">
-      <div class="movieTitle"></div>
-      <p class="movieOverview"></p>
-      <p class="movieVoteAverage">평점 : null</p>
-
-
     </div>
+    <div class = reply>
+      <h2 class="reply1">관람평 남기기</h2>
+      <form class="commentForm">
+        <input class="comment" type="text" placeholder="댓글을 입력해주세요" required>
+        <input class="userName" type="text" placeholder="닉네임">
+        <input class="pw" type="password" placeholder="비밀번호">
+        <input class="pwCheck" type="password" placeholder="비밀번호 확인">
+        <button type="submit">댓글 등록</button>
+      </form>
 
-    <h2 class="reply">관람평 남기기</h2>
-    <form class="commentForm">
-      <input class="comment" type="text" placeholder="댓글을 입력해주세요" required>
-      <input class="userName" type="text" placeholder="닉네임">
-      <input class="pw" type="password" placeholder="비밀번호">
-      <input class="pwCheck" type="password" placeholder="비밀번호 확인">
-      <button type="submit">댓글 등록</button>
-    </form>
-
-    <ul class="commentBox"></ul>
+      <ul class="commentBox"></ul>
+    </div>
   </div>
 </body>
 

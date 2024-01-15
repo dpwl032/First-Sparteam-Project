@@ -32,12 +32,12 @@ header img:hover {
 
 #searchForm>input {
   padding: 10px;
-  width: 15%;
+  width: 20%;
   margin: 0 1%;
   border: none;
 
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   background-color: transparent;
   border-bottom: 1px solid white;
 }
@@ -54,6 +54,7 @@ header img:hover {
 
 #searchForm>input:hover {
   border-bottom: 1px solid red;
+  
 }
 
 #searchForm>button:hover {
