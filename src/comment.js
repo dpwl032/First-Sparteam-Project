@@ -61,10 +61,8 @@ commentForm.addEventListener("submit", (e) => {
     pw.value = '';
     pwCheck.value = '';
     pw.focus();
-  }else{
-    return;
+    return false; 
   }
-
 
   // 로컬스토리지에 저장된 영화 아이디값을 기준으로 댓글 불러오기
   let getComment = window.localStorage.getItem(clickedMovieId);
@@ -88,7 +86,10 @@ commentForm.addEventListener("submit", (e) => {
     pw: pw.value,
     id
   };
-
+  userName.value = '';
+  comment.value = '';
+  pw.value = '';
+  pwCheck.value = '';
   // 댓글을 생성하면 댓글목록 배열에 추가
   returnObjcomment.push(makeComment);
 
@@ -178,7 +179,6 @@ commentBox.addEventListener("click", (e) => {
     if (userPassword === comment.pw) {
 
       // 비밀번호가 일치하는 경우 댓글 삭제
-      alert('테스트');
 
       commentElement.remove();  // html에서 댓글 요소 삭제
 
