@@ -18,7 +18,8 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       addMovie(movie);
     });
   })
-  .catch(err => console.error(err));
+  .catch( err => console.error(err));
+  
 
 function addMovie(movie) {
   const moviesBox = document.getElementById("moviesBox");
@@ -62,7 +63,7 @@ function addMovie(movie) {
 
   // 상세페이지로 카드 정보 보내기
   card.addEventListener("click", (e) => {
-    console.log(card);
+  //   console.log(card);
 
     // localStorage.setItem("clickedMovieId", id);
     localStorage.setItem("clickedTitle", title);
@@ -70,12 +71,14 @@ function addMovie(movie) {
     localStorage.setItem("clickedPosterPath", poster_path);
     localStorage.setItem("clickedVoteAverage", vote_average);
 
-    window.location.href = "comment.html";
+    // window.location.href = "comment.html";
 
   });
   return card;
 
 };
+
+
 
 // 제목 검색 시 결과 띄우기
 // form을 사용할 경우, Enter이벤트를 따로 작성하지않아도 적용된다.
@@ -108,3 +111,4 @@ searchForm.addEventListener("submit", (e) => {
     }
   });
 });
+

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>movie project</title>
   <link rel="stylesheet" href="/style/movie.css">
+  <link rel="stylesheet" href="style/modal.css">
   <script src="/src/movie.js" type="module"></script>
+  <script src="/src/modal.js" type="module"></script>
 </head>
 
 <body>
@@ -20,6 +22,23 @@
       <input type="text" id="search" placeholder="영화 제목을 검색하세요">
       <button id="btn" type="submit">검색하기</button>
     </form>
+
+    <div id="modal" class="modal-overlay">
+      <div class="modal-window">
+          <div class="close-area">✕</div>
+          <div class="title">
+              <h2 id="modalTitle">제목</h2>
+              <div class="modal-img" id="modalImg"></div>
+          </div>
+          
+          
+          <div class="content">
+             <p id="contentName"></p>
+          </div>
+          <div class="see-more"><a href="comment.html">더보기</a></div>
+      </div>
+  </div>
+
     <div id="moviesBox">
     </div>
   </div>

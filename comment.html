@@ -14,13 +14,15 @@
 <body>
 
   <header>
-    <img src="img/title.png" alt="Spasta Movie" onclick="location.reload();">
+    <img id="logo" src="img/title.png" alt="Spasta Movie" onclick="location.reload();">
   </header>
   <form id="searchForm">
     <label for="search">영화 검색</label>
     <input type="text" id="search" placeholder="영화 제목을 검색하세요">
     <button id="btn" type="submit">검색하기</button>
   </form>
+  <div id="movies">
+  </div>
   <div class="showBox">
     <div class="clickedMoviev"></div>
 

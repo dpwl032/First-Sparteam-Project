@@ -25,3 +25,7 @@
 .commentForm {
   width: 60%;
 }
+
+#movies {
+  display: none ;
+}
