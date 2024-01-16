@@ -13,7 +13,7 @@
   <body>
     <header>
       <img
-        class ="headerImg"
+        class="headerImg"
         id="logo"
         src="img/title.png"
         alt="Spasta Movie"
@@ -26,22 +26,28 @@
       <button id="btn" type="submit">검색하기</button>
     </form>
     <div class="showBox">
+      <div class="clickedMoviev"></div>
 
-      <div class="clickedMoviev">
-  
-      </div>
-      <div class = reply>
-        <h2 class="reply1">관람평 남기기</h2>
-        <form class="commentForm">
-          <input class="comment" type="text" placeholder="댓글을 입력해주세요" required>
-          <input class="userName" type="text" placeholder="닉네임">
-          <input class="pw" type="password" placeholder="비밀번호">
-          <input class="pwCheck" type="password" placeholder="비밀번호 확인">
-          <button class="commentbtn" type="submit">댓글 등록</button>
-        </form>
-  
-        <ul class="commentBox"></ul>
-      </div>
+      <h2 class="reply">관람평 남기기</h2>
+      <form class="commentForm">
+        <input
+          class="comment"
+          type="text"
+          placeholder="댓글을 입력해주세요"
+          required
+        />
+        <input class="userName" type="text" placeholder="닉네임" required />
+        <input class="pw" type="password" placeholder="비밀번호" required />
+        <input
+          class="pwCheck"
+          type="password"
+          placeholder="비밀번호 확인"
+          required
+        />
+        <button type="submit">댓글 등록</button>
+      </form>
+
+      <ul class="commentBox"></ul>
     </div>
   </body>
 </html>
