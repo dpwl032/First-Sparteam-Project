@@ -64,7 +64,7 @@ function addMovie(movie) {
   card.addEventListener("click", (e) => {
     console.log(card);
 
-    // localStorage.setItem("clickedMovieId", id);
+    localStorage.setItem("clickedMovieId", id);
     localStorage.setItem("clickedTitle", title);
     localStorage.setItem("clickedOverview", overview);
     localStorage.setItem("clickedPosterPath", poster_path);
@@ -81,7 +81,7 @@ function addMovie(movie) {
 // form을 사용할 경우, Enter이벤트를 따로 작성하지않아도 적용된다.
 let searchForm = document.getElementById("searchForm");
 
-// 새로고침 안내 문구
+// 새로고침 안내 문구  
 let logoText = document.getElementById("logoText");
 logoText.style.display = "none"
 
@@ -94,6 +94,7 @@ searchForm.addEventListener("submit", (e) => {
   // 영화 카드 가져오기 (카드 제목으로 검색 키워드랑 비교해야 하니까)
   const searchInput = document.getElementById("search").value.toLowerCase();
   const movieCards = document.querySelectorAll(".card");
+  
 
   movieCards.forEach(card => {
     const title = card.querySelector(".mvTitle").textContent.toLowerCase();
