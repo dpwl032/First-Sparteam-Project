@@ -8,15 +8,15 @@ const options = {
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   .then(response => response.json())
   .then(response => {
-    // console.log(response);
+  ;
     const result = response.results;
-    // console.log("result",result);
-
+   
     // 배열 형태의 api문서를 배열 반복문을 사용하여 addMovie 이벤트에 인자로 전달
     result.forEach(movie => {
-      // console.log("movie", movie)
       addMovie(movie);
     });
+
+
   })
   .catch(err => console.error(err));
 
@@ -58,6 +58,25 @@ function addMovie(movie) {
   // 컨테이너에 카드 추가
   moviesBox.appendChild(card);
 
+
+//제목.includes(검색내용)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // console.log(card);
 
   // 상세페이지로 카드 정보 보내기
@@ -75,6 +94,9 @@ function addMovie(movie) {
   });
   return card;
 
+  
+
+  
 };
 
 // 제목 검색 시 결과 띄우기
@@ -85,27 +107,29 @@ let searchForm = document.getElementById("searchForm");
 let logoText = document.getElementById("logoText");
 logoText.style.display = "none"
 
-searchForm.addEventListener("submit", (e) => {
+
+searchForm.addEventListener("submit", e => {
   // preventDefault 기본행동을 막는 함수 form은 기본적으로 새로고침을한다
   // e - 이벤트 대상
-  e.preventDefault();
 
+  e.preventDefault();
   // 인풋값을 소문자로 변환하여 가져오기
   // 영화 카드 가져오기 (카드 제목으로 검색 키워드랑 비교해야 하니까)
   const searchInput = document.getElementById("search").value.toLowerCase();
   const movieCards = document.querySelectorAll(".card");
-  
 
+//제목.includes(검색내용)
   movieCards.forEach(card => {
     const title = card.querySelector(".mvTitle").textContent.toLowerCase();
     // textContent - value는 사용자가 입력하는 텍스트에서만 사용.
-
     if (title.includes(searchInput)) {
       card.style.display = "flex"; // 제목이 일치하면 카드 띄우기
       logoText.style.display = "flex";
-    } else {
+    }else {
       card.style.display = "none"; // 일치하지 않으면 카드를 숨기기
       logoText.style.display = "flex";
     }
+
   });
-});
+})
+
