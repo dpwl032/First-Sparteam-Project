@@ -32,24 +32,13 @@ header img:hover {
   
 }
 
-.headerdiv {
 
-  
-  flex-direction: row;
-  display:flex ;
-  height: 20px;
-
-
-}
-.dancha {
-  color:black;
-  width:30px;
-
-}
 .headerImg {
 
   margin-bottom: 30px;
-  margin:  auto;
+  margin: auto;
+  margin-top: 20px;
+
   
 
 }
