@@ -2,25 +2,22 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>comment</title>
   <script src="src/comment.js" type="module"></script>
-  <script src="src/movie.js" type="module"></script>
-  <link rel="stylesheet" href="style/comment.css">
-  <link rel="stylesheet" href="style/movie.css">
+  <!-- <script src="src/movie.js" type="module"></script> -->
+  <link rel="stylesheet" href="style/comment.css" />
+  <link rel="stylesheet" href="style/movie.css" />
 </head>
 
 <body>
-
   <header>
-    
-    
-    <img class="headerImg" src="img/title.png" alt="Spasta Movie" onclick="location.reload();">
+    <img class="headerImg" id="logo" src="img/title.png" alt="Spasta Movie" onclick="location.reload();" />
   </header>
   <form id="searchForm">
     <label for="search">영화 검색</label>
-    <input type="text" id="search" placeholder="영화 제목을 검색하세요">
+    <input type="text" id="search" placeholder="영화 제목을 검색하세요" />
     <button id="btn" type="submit">검색하기</button>
   </form>
 
@@ -29,7 +26,7 @@
     <div class="clickedMoviev">
 
     </div>
-    <div class = reply>
+    <div class=reply>
       <h2 class="reply1">관람평 남기기</h2>
       <form class="commentForm">
         <input class="comment" type="text" placeholder="댓글을 입력해주세요" required>
