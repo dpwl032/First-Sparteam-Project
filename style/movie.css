@@ -22,6 +22,8 @@ header {
   margin: 2%;
   color: white;
   display: flex;
+  flex-direction: column;
+  
 }
 
 header img:hover {
@@ -30,11 +32,24 @@ header img:hover {
   
 }
 
-
-.headerImg {
+.headerdiv {
 
   
-  margin: 0 auto;
+  flex-direction: row;
+  display:flex ;
+  height: 20px;
+
+
+}
+.dancha {
+  color:black;
+  width:30px;
+
+}
+.headerImg {
+
+  margin-bottom: 30px;
+  margin:  auto;
   
 
 }
@@ -46,7 +61,7 @@ header img:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
+  margin-top: 50px;
   font-size: 25px;
   color: white;
 }
@@ -89,6 +104,9 @@ header img:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 26px;
+  
+
 
 }
 
