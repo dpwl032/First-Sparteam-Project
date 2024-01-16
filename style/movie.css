@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+header {
+  height: 140px;
+  margin: 2%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+header img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  
+}
+
+
+.headerImg {
+
+  margin-bottom: 30px;
+  margin: auto;
+  margin-top: 20px;
+
+  
+
+}
+
+
+#searchForm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 25px;
+  color: white;
+}
+
+#searchForm>input {
+  padding: 10px;
+  width: 20%;
+  margin: 0 1%;
+  border: none;
+
+  color: white;
+  font-size: 17px;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+}
+
+#searchForm>button {
+  padding: 10px;
+
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+#searchForm>input:hover {
+  border-bottom: 1px solid red;
+  
+}
+
+#searchForm>button:hover {
+  cursor: pointer;
+  border: 3px solid red;
+  color: red;
+}
+
+#moviesBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 26px;
+  
+
+
+}
+
+.card {
+  width: 25%;
+  height: 720px;
+  padding: 1%;
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+
+  color: black;
+  background-color: white;
+
+  border-radius: 10px;
+}
+
+.card>.poster {
+  width: 60%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  filter: invert(10%);
+  /* filter: brightness(150%); */
+  transform: scale(1.1);
+}
+
+
+.poster{
+
+  margin: 20px auto;
+
+
+}
+.mvTitle {
+  margin: 10px auto;
+  font-size: medium;
+
+}
+
+.mvOverview {
+
+  margin: 10px auto;
+  width: 90%;
+
+
+}
+
+.vote-mvVote_average{
+  margin: 10px auto;
+  font-weight: bolder;
+}

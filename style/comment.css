@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+header {
+
+  display: flex;
+
+
+}
+
+
+.headerImg {
+  margin: 30 auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+
+
+}
+.showBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.clickedMoviev {
+  background-color: white;
+  width: 60%;
+  margin: 25px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  border-radius: 8px;
+
+
+}
+
+.commentContainer {
+  margin-top: 3%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.commentForm {
+  width: 88%;
+  margin: 5px auto;
+
+
+}
+
+.commentBox{
+
+  margin: 30px auto;
+  width: 88%;
+
+}
+
+.deleteBtn {
+
+  margin: 20px 15px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+
+}
+
+
+
+
+#searchForm>input {
+  
+  width: 40%;
+  font-size: 15px;
+
+}
+
+.movieposter {
+
+  margin: 5% auto;
+
+}
+
+.movieTitle {
+  font-size: larger;
+  margin: 10px auto;
+  font-weight:900
+
+}
+
+.movieOverview {
+  margin: 10px auto;
+  flex: auto;
+  width: 80%;
+
+
+}
+
+.movieVoteAverage {
+
+  margin: 30px auto 50px auto;
+  font-weight:900
+}
+
+.reply {
+  color: black;
+  width: 60%;
+  background-color: white;
+  flex: auto;
+  
+  margin: 35px auto;
+  margin-bottom: 60px;
+  border-radius: 8px;
+
+  
+}
+
+.reply1 {
+  color: black;
+  width: 20%;
+  background-color: white;
+  margin: 25px auto;
+  white-space : nowrap;
+}
+
+.commentbtn {
+
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+
+
+
+}
