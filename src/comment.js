@@ -37,6 +37,45 @@ clickedMoviev.appendChild(movieTitle);
 clickedMoviev.appendChild(movieOverview);
 clickedMoviev.appendChild(movieVoteAverage);
 
+///////////////////
+  ////////////////////
+
+const searchEvent = document.querySelector("#searchForm");
+// const aaa = document.querySelectorAll(".clickedMoviev");
+// console.log(movieTitle);
+
+searchEvent.addEventListener("submit", (e) => {
+  e.preventDefault();
+const searchInput = document.querySelector("#search").value.toLowerCase();
+  console.log(searchInput);
+
+  const searchResult = localStorage.setItem("searchResult", searchInput);
+  const commentSearch = localStorage.getItem("searchResult");
+  // console.log("test=>", commentSearch);
+// console.log("test3=>", mvTitle);
+
+  
+  { window.location.href = "search.html"; }
+
+
+    }
+
+
+);
+
+
+
+//////////////////////////
+
+
+
+
+
+
+
+
+
+
 
 // =========== 댓글기능 구현 =========== 
 
@@ -136,7 +175,7 @@ loadComments();
 function loadComments() {
   // 모든 댓글을 영화id 키값으로 가져오기
   const allComments = JSON.parse(localStorage.getItem(clickedMovieId));
-  console.log("allComments", allComments);
+  // console.log("allComments", allComments);
 
   commentBox.innerHTML = ''; // 기존의 댓글 목록 초기화
 
@@ -201,3 +240,15 @@ commentBox.addEventListener("click", (e) => {
     }
   }
 });
+
+
+
+/////////////
+
+let searchForm = document.getElementById("searchForm");
+
+// 새로고침 안내 문구
+// 새로고침 안내 문구  
+let logoText = document.getElementById("logoText");
+logoText.style.display = "none"
+
