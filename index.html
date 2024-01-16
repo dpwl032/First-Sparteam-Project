@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
-    <title>12조 영화 DB</title>
-    <script src="src/main.js" type="module"></script>
+    <title>movie project</title>
+    <link rel="stylesheet" href="/style/movie.css" />
+    <script src="/src/movie.js" type="module"></script>
   </head>
 
   <body>
-    <header>
-      <h1>MOVIE DB 12</h1>
-    </header>
-    <form id="search-form">
-      <input
-        name="searchValue"
-        type="text"
-        id="search-input"
-        placeholder="영화 제목을 검색해 보세요"
-      />
-      <button type="submit" id="search-btn">검색</button>
-    </form>
-    <ul id="card-list"></ul>
-
+    <div class="container">
+      <header>
+        <img
+          id="logo"
+          src="img/title.png"
+          alt="Spasta Movie"
+          onclick="location.reload();"
+        />
+        <p id="logoText">로고를 클릭하면 새로고침됩니다. &#8634;</p>
+      </header>
+      <form id="searchForm">
+        <label for="search">영화 검색</label>
+        <input type="text" id="search" placeholder="영화 제목을 검색하세요" />
+        <button id="btn" type="submit">검색하기</button>
+      </form>
+      <div id="moviesBox"></div>
+    </div>
   </body>
 </html>
